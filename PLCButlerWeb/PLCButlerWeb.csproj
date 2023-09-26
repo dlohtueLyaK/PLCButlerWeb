@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{247B703F-D407-4048-BC9F-1B5DF9AE5EB1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PLCButlerWeb</RootNamespace>
+    <AssemblyName>PLCButlerWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ChangeText">
+      <HintPath>References\ChangeText\ChangeText.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MindFusion.Common">
+      <HintPath>References\MindFusion.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming">
+      <HintPath>References\MindFusion.Diagramming.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.WebForms">
+      <HintPath>References\MindFusion.Diagramming.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Svg">
+      <HintPath>References\MindFusion.Svg.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Engineering, Version=14.0.1.0, Culture=neutral, PublicKeyToken=d29ec89bac048f84, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PLCButler\dll\Siemens.Engineering.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.3.7\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.3.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CalculationList.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="ControllerList.aspx" />
+    <Content Include="CounterList.aspx" />
+    <Content Include="DeviceList.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="CompareFile.aspx" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="MindFusion.Diagramming.js" />
+    <Content Include="ParameterList.aspx" />
+    <Content Include="Pictures\black.jpg" />
+    <Content Include="Pictures\P&amp;ID\DRAIN\DRAIN1.JPG" />
+    <Content Include="Pictures\P&amp;ID\DRAIN\DRAIN2.JPG" />
+    <Content Include="Pictures\P&amp;ID\DRAIN\DRAIN3.JPG" />
+    <Content Include="Pictures\P&amp;ID\FLOW_INSTRUMENTS\FLOW_INSTRUMENT_PANEL_MOUNTED_TRANSMITTER_CONTROL1.JPG" />
+    <Content Include="Pictures\P&amp;ID\FLOW_INSTRUMENTS\FLOW_INSTRUMENT_PANEL_MOUNTED_TRANSMITTER_CONTROL2.JPG" />
+    <Content Include="Pictures\P&amp;ID\FLOW_INSTRUMENTS\FLOW_INSTRUMENT_PANEL_MOUNTED_TRANSMITTER_CONTROL3.JPG" />
+    <Content Include="Pictures\P&amp;ID\FLOW_INSTRUMENTS\FLOW_INSTRUMENT_PIPE_MOUNTED_INDICATOR1.JPG" />
+    <Content Include="Pictures\P&amp;ID\FLOW_INSTRUMENTS\FLOW_INSTRUMENT_PIPE_MOUNTED_INDICATOR2.JPG" />
+    <Content Include="Pictures\P&amp;ID\FLOW_INSTRUMENTS\FLOW_INSTRUMENT_PIPE_MOUNTED_INDICATOR3.JPG" />
+    <Content Include="Pictures\P&amp;ID\FLOW_INSTRUMENTS\FLOW_INSTRUMENT_PIPE_MOUNTED_TRANSMITTER_CONTROL1.JPG" />
+    <Content Include="Pictures\P&amp;ID\FLOW_INSTRUMENTS\FLOW_INSTRUMENT_PIPE_MOUNTED_TRANSMITTER_CONTROL2.JPG" />
+    <Content Include="Pictures\P&amp;ID\FLOW_INSTRUMENTS\FLOW_INSTRUMENT_PIPE_MOUNTED_TRANSMITTER_CONTROL3.JPG" />
+    <Content Include="Pictures\P&amp;ID\HEATER\HEATER_ELECTRIC\HEATER_ELECTRIC1.JPG" />
+    <Content Include="Pictures\P&amp;ID\HEATER\HEATER_ELECTRIC\HEATER_ELECTRIC2.JPG" />
+    <Content Include="Pictures\P&amp;ID\HEATER\HEATER_ELECTRIC\HEATER_ELECTRIC3.JPG" />
+    <Content Include="Pictures\P&amp;ID\HEATER\HEATER_PLATE\HEATER_PLATE1.JPG" />
+    <Content Include="Pictures\P&amp;ID\HEATER\HEATER_PLATE\HEATER_PLATE2.JPG" />
+    <Content Include="Pictures\P&amp;ID\HEATER\HEATER_PLATE\HEATER_PLATE3.JPG" />
+    <Content Include="Pictures\P&amp;ID\HEATER\HEATER_PLATE\HEATER_PLATE4.JPG" />
+    <Content Include="Pictures\P&amp;ID\HEATER\HEATER_PLATE\HEATER_PLATE5.JPG" />
+    <Content Include="Pictures\P&amp;ID\HEATER\HEATER_PLATE\HEATER_PLATE6.JPG" />
+    <Content Include="Pictures\P&amp;ID\HEATER\HEATER_TUBE\HEATER_TUBE1.JPG" />
+    <Content Include="Pictures\P&amp;ID\HEATER\HEATER_TUBE\HEATER_TUBE2.JPG" />
+    <Content Include="Pictures\P&amp;ID\INSTRUMENT\PANEL_MOUNTED_INDICATOR.JPG" />
+    <Content Include="Pictures\P&amp;ID\INSTRUMENT\PANEL_MOUNTED_TRANSMITTER_CONTROL.JPG" />
+    <Content Include="Pictures\P&amp;ID\INSTRUMENT\PIPE_MOUNTED_INDICATOR.JPG" />
+    <Content Include="Pictures\P&amp;ID\INSTRUMENT\PIPE_MOUNTED_TRANSMITTER_CONTROL.JPG" />
+    <Content Include="Pictures\P&amp;ID\KMS_MEMBRANES\MEMBRANES_FEG_PLUS_TM.JPG" />
+    <Content Include="Pictures\P&amp;ID\KMS_MEMBRANES\MEMBRANES_FRAME_TYPE_A&amp;B.JPG" />
+    <Content Include="Pictures\P&amp;ID\KMS_MEMBRANES\MEMBRANES_FRAME_TYPE_C.JPG" />
+    <Content Include="Pictures\P&amp;ID\KMS_MEMBRANES\MEMBRANES_FRAME_TYPE_F.JPG" />
+    <Content Include="Pictures\P&amp;ID\KMS_MEMBRANES\MEMBRANES_HOLLOW_FIBER.JPG" />
+    <Content Include="Pictures\P&amp;ID\KMS_MEMBRANES\MEMBRANES_KPAK_TM.JPG" />
+    <Content Include="Pictures\P&amp;ID\KMS_MEMBRANES\MEMBRANES_MEGAPURE_TM.JPG" />
+    <Content Include="Pictures\P&amp;ID\KMS_MEMBRANES\MEMBRANES_MEMBRANE_GROUP_TRAIN.JPG" />
+    <Content Include="Pictures\P&amp;ID\KMS_MEMBRANES\MEMBRANES_SPIRAL_2.jpg" />
+    <Content Include="Pictures\P&amp;ID\KMS_MEMBRANES\MEMBRANES_SPIRAL_3.jpg" />
+    <Content Include="Pictures\P&amp;ID\KMS_MEMBRANES\MEMBRANES_SPIRAL_4.JPG" />
+    <Content Include="Pictures\P&amp;ID\KMS_MEMBRANES\MEMBRANES_SUPER-G_TM.JPG" />
+    <Content Include="Pictures\P&amp;ID\LINES.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\BLOWERS\BLOWERS_CENTRIFUGAL.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\BLOWERS\BLOWERS_DIAPHRAGM.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\BLOWERS\BLOWERS_GEAR_LOBE.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\BLOWERS\BLOWERS_GENERIC.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\BLOWERS\BLOWERS_PISTON.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\BLOWERS\BLOWERS_POSITIVE_DISPLACEMENT.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\BLOWERS\BLOWERS_ROTARY_VANE.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\BLOWERS\BLOWERS_WALL.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\PUMPS\PUMPS_CENTRIFUGAL.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\PUMPS\PUMPS_DIAPHRAGM.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\PUMPS\PUMPS_GEARE_LOBE.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\PUMPS\PUMPS_GENERIC.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\PUMPS\PUMPS_HELICAL_WORM-GEAR.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\PUMPS\PUMPS_PERISTALTIC.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\PUMPS\PUMPS_PISTON.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\PUMPS\PUMPS_POSITIVE_DISPLACEMENT.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\PUMPS\PUMPS_RECIPROCATING_PISTON.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\PUMPS\PUMPS_ROTARY_VANE.JPG" />
+    <Content Include="Pictures\P&amp;ID\MOTORS\PUMPS\PUMPS_WALL.JPG" />
+    <Content Include="Pictures\P&amp;ID\NON-KMS_FILTERS\NON-KMS_FILTERS_BAG.JPG" />
+    <Content Include="Pictures\P&amp;ID\NON-KMS_FILTERS\NON-KMS_FILTERS_BAG_WITH_BLEED_AND_DRAIN.JPG" />
+    <Content Include="Pictures\P&amp;ID\NON-KMS_FILTERS\NON-KMS_FILTERS_BIO_SCRUBBER.JPG" />
+    <Content Include="Pictures\P&amp;ID\NON-KMS_FILTERS\NON-KMS_FILTERS_BIO_SCRUBBER_SELF_CLEANING.JPG" />
+    <Content Include="Pictures\P&amp;ID\NON-KMS_FILTERS\NON-KMS_FILTERS_CARTRIDGE.JPG" />
+    <Content Include="Pictures\P&amp;ID\NON-KMS_FILTERS\NON-KMS_FILTERS_CARTRIDGE_WITH_BLEED_AND_DRAIN.JPG" />
+    <Content Include="Pictures\P&amp;ID\NON-KMS_FILTERS\NON-KMS_FILTERS_CYCLONE.JPG" />
+    <Content Include="Pictures\P&amp;ID\NON-KMS_FILTERS\NON-KMS_FILTERS_CYCLONE_WITH_MOTOR.JPG" />
+    <Content Include="Pictures\P&amp;ID\NON-KMS_FILTERS\NON-KMS_FILTERS_FILTER.JPG" />
+    <Content Include="Pictures\P&amp;ID\NON-KMS_FILTERS\NON-KMS_FILTERS_ROTARY_DRUM.JPG" />
+    <Content Include="Pictures\P&amp;ID\NON-KMS_FILTERS\NON-KMS_FILTERS_STRAINER.JPG" />
+    <Content Include="Pictures\P&amp;ID\SAMPLE\SAMPLE1.JPG" />
+    <Content Include="Pictures\P&amp;ID\SAMPLE\SAMPLE2.JPG" />
+    <Content Include="Pictures\P&amp;ID\SAMPLE\SAMPLE3.JPG" />
+    <Content Include="Pictures\P&amp;ID\SAMPLE\SAMPLE_AUTOMATED_1.JPG" />
+    <Content Include="Pictures\P&amp;ID\TANKS\NON_SANITARY_TANKS_1.JPG" />
+    <Content Include="Pictures\P&amp;ID\TANKS\NON_SANITARY_TANKS_2.JPG" />
+    <Content Include="Pictures\P&amp;ID\TANKS\NON_SANITARY_TANKS_3.JPG" />
+    <Content Include="Pictures\P&amp;ID\TANKS\NON_SANITARY_TANKS_4.JPG" />
+    <Content Include="Pictures\P&amp;ID\TANKS\SANITARY_TANKS_1.JPG" />
+    <Content Include="Pictures\P&amp;ID\TANKS\SANITARY_TANKS_2.JPG" />
+    <Content Include="Pictures\P&amp;ID\TANKS\SANITARY_TANKS_3.JPG" />
+    <Content Include="Pictures\P&amp;ID\TANKS\SQUARE_TANKS_1.JPG" />
+    <Content Include="Pictures\P&amp;ID\TANKS\SQUARE_TANKS_2.JPG" />
+    <Content Include="Pictures\P&amp;ID\TANKS\SQUARE_TANKS_3.JPG" />
+    <Content Include="Pictures\P&amp;ID\TANKS\SQUARE_TANKS_4.JPG" />
+    <Content Include="Pictures\P&amp;ID\TANKS\TANK_JACKET.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\3-WAY_BALL_VALVES\3-WAY_BALL_VALVES_BALL.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\3-WAY_BALL_VALVES\3-WAY_BALL_VALVES_BUTTERFLY.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\3-WAY_BALL_VALVES\3-WAY_BALL_VALVES_DIAPHRGM.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\3-WAY_BALL_VALVES\3-WAY_BALL_VALVES_FLOAT.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\3-WAY_BALL_VALVES\3-WAY_BALL_VALVES_GENERIC.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\3-WAY_BALL_VALVES\3-WAY_BALL_VALVES_GLOBE.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\3-WAY_BALL_VALVES\3-WAY_BALL_VALVES_NEEDLE.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\3-WAY_BALL_VALVES\3-WAY_BALL_VALVES_SANITARY.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\3-WAY_GLOBE_VALVES\3-WAY_GLOBE_VALVES_BALL.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\3-WAY_GLOBE_VALVES\3-WAY_GLOBE_VALVES_BUTTERFLY.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\3-WAY_GLOBE_VALVES\3-WAY_GLOBE_VALVES_DIAPHRGM.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\3-WAY_GLOBE_VALVES\3-WAY_GLOBE_VALVES_FLOAT.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\3-WAY_GLOBE_VALVES\3-WAY_GLOBE_VALVES_GENERIC.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\3-WAY_GLOBE_VALVES\3-WAY_GLOBE_VALVES_GLOBE.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\3-WAY_GLOBE_VALVES\3-WAY_GLOBE_VALVES_NEEDLE.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\3-WAY_GLOBE_VALVES\3-WAY_GLOBE_VALVES_PLUG.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\3-WAY_GLOBE_VALVES\3-WAY_GLOBE_VALVES_SANITARY.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\ANGLE_VALVES\ANGLE_VALVES_BALL.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\ANGLE_VALVES\ANGLE_VALVES_DIAPHRGM.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\ANGLE_VALVES\ANGLE_VALVES_FLOAT.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\ANGLE_VALVES\ANGLE_VALVES_GENERIC.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\ANGLE_VALVES\ANGLE_VALVES_GLOBE.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\ANGLE_VALVES\ANGLE_VALVES_NEEDLE.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\ANGLE_VALVES\ANGLE_VALVES_SANITARY.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\IN-LINE_VALVES\IN-LINE_VALVES_BALL.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\IN-LINE_VALVES\IN-LINE_VALVES_BUTTERFLY.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\IN-LINE_VALVES\IN-LINE_VALVES_DIAPHRGM.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\IN-LINE_VALVES\IN-LINE_VALVES_GATE.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\IN-LINE_VALVES\IN-LINE_VALVES_GENERIC.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\IN-LINE_VALVES\IN-LINE_VALVES_GLOBE.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\IN-LINE_VALVES\IN-LINE_VALVES_NEEDLE.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\IN-LINE_VALVES\IN-LINE_VALVES_PLUG.JPG" />
+    <Content Include="Pictures\P&amp;ID\VALVES\IN-LINE_VALVES\IN-LINE_VALVES_SANITARY.JPG" />
+    <Content Include="Pictures\P&amp;ID\VENT\VENT1.JPG" />
+    <Content Include="Pictures\P&amp;ID\VENT\VENT2.JPG" />
+    <Content Include="Pictures\P&amp;ID_SVG\Drain\DRAIN2.svg" />
+    <Content Include="Pictures\P&amp;ID_SVG\Initiator\INI.JPG" />
+    <Content Include="Pictures\P&amp;ID_SVG\Initiator\INI.svg" />
+    <Content Include="Pictures\P&amp;ID_SVG\Initiator\INI_ACTIVE.JPG" />
+    <Content Include="Pictures\P&amp;ID_SVG\Initiator\INI_ACTIVE.svg" />
+    <Content Include="Pictures\P&amp;ID_SVG\Membrane\MEMBRANES_SPIRAL_2.svg" />
+    <Content Include="Pictures\P&amp;ID_SVG\Pump\PUMPS_GENERIC.JPG" />
+    <Content Include="Pictures\P&amp;ID_SVG\Pump\PUMPS_GENERIC.svg" />
+    <Content Include="Pictures\P&amp;ID_SVG\Pump\PUMPS_GENERIC_ACITVE.JPG" />
+    <Content Include="Pictures\P&amp;ID_SVG\Pump\PUMPS_GENERIC_ACITVE.svg" />
+    <Content Include="Pictures\P&amp;ID_SVG\Tank\NON_SANITARY_TANKS_3.JPG" />
+    <Content Include="Pictures\P&amp;ID_SVG\Tank\NON_SANITARY_TANKS_3.svg" />
+    <Content Include="Pictures\P&amp;ID_SVG\Tank\NON_SANITARY_TANKS_3_VERSION_2.JPG" />
+    <Content Include="Pictures\P&amp;ID_SVG\Tank\NON_SANITARY_TANKS_3_VERSION_2.svg" />
+    <Content Include="Pictures\P&amp;ID_SVG\Timer\TIMER.JPG" />
+    <Content Include="Pictures\P&amp;ID_SVG\Timer\TIMER.svg" />
+    <Content Include="Pictures\P&amp;ID_SVG\Timer\TIMER_ACTIVE.jpg" />
+    <Content Include="Pictures\P&amp;ID_SVG\Timer\TIMER_ACTIVE.svg" />
+    <Content Include="Pictures\P&amp;ID_SVG\Ventil\IN-LINE_VALVES_GENERIC.JPG" />
+    <Content Include="Pictures\P&amp;ID_SVG\Ventil\IN-LINE_VALVES_GENERIC.svg" />
+    <Content Include="Pictures\P&amp;ID_SVG\Ventil\IN-LINE_VALVES_GENERIC_ACTIVE.JPG" />
+    <Content Include="Pictures\P&amp;ID_SVG\Ventil\IN-LINE_VALVES_GENERIC_ACTIVE.svg" />
+    <Content Include="Pictures\plcbutler.jpeg" />
+    <Content Include="Pictures\white.png" />
+    <Content Include="PipingInstrumentationDiagram.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="TIAPortalOpennessWeb.aspx" />
+    <Content Include="TimerList.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CalculationList.aspx.cs">
+      <DependentUpon>CalculationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CalculationList.aspx.designer.cs">
+      <DependentUpon>CalculationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CodeFile.cs" />
+    <Compile Include="ControllerList.aspx.cs">
+      <DependentUpon>ControllerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerList.aspx.designer.cs">
+      <DependentUpon>ControllerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CounterList.aspx.cs">
+      <DependentUpon>CounterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CounterList.aspx.designer.cs">
+      <DependentUpon>CounterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceList.aspx.cs">
+      <DependentUpon>DeviceList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceList.aspx.designer.cs">
+      <DependentUpon>DeviceList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="function\function.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ParameterList.aspx.cs">
+      <DependentUpon>ParameterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ParameterList.aspx.designer.cs">
+      <DependentUpon>ParameterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PipingInstrumentationDiagram.aspx.cs">
+      <DependentUpon>PipingInstrumentationDiagram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PipingInstrumentationDiagram.aspx.designer.cs">
+      <DependentUpon>PipingInstrumentationDiagram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TIAPortalOpennessWeb.aspx.cs">
+      <DependentUpon>TIAPortalOpennessWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TIAPortalOpennessWeb.aspx.designer.cs">
+      <DependentUpon>TIAPortalOpennessWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TimerList.aspx.cs">
+      <DependentUpon>TimerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TimerList.aspx.designer.cs">
+      <DependentUpon>TimerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CompareFile.aspx.cs">
+      <DependentUpon>CompareFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompareFile.aspx.designer.cs">
+      <DependentUpon>CompareFile.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50322</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50322/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

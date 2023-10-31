@@ -6,6 +6,8 @@ namespace FileOperationFunction
 {
     public class FileOperation
     {
+//**
+//**Function start
         public static string ReadTextOfFile;
         //****************************************************************************
         //HOW TO CALL:
@@ -44,7 +46,9 @@ namespace FileOperationFunction
             }
             return ReadTextOfFile;
         }
+//**Function end
 
+//**Function start
         //****************************************************************************
         //HOW TO CALL:
         //using FileFunction;
@@ -71,5 +75,26 @@ namespace FileOperationFunction
             }
             return ("Executing finally block.");
         }
+//**Function end
+// search for string
+// version 1
+// input: start string output: result, number of strings found
+// version 2
+// input: start string, end string output: result, number of strings found
+//**Function start
+
+//**Function end
+// search and replace string
+// input: start string, end string, new string, overwrite all(?) output: number of strings found
+//**Function start
+
+//**Function end
+// 
+//**Function start
+
+//**Function end
+
+
+//**
     }
 }
